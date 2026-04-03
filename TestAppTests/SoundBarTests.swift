@@ -1,18 +1,22 @@
 import XCTest
+@testable import TestApp
 
 final class SoundBarTests: XCTestCase {
     //  TODO: - Здесь создаются экземпляры SoundBar
+    //  System Under Test (Система, которая тестируется)
+    var sut: SoundBar!
     
     var items: [String] = []
 
     override func setUp() {
         super.setUp()
+        sut = SoundBar()
         //  Здесь происходит инициализация экземпляров SoundBar
     }
 
     override func tearDown() {
         //  Здесь происходит выгрузка из памяти, присваивание nil
-        
+        sut = nil
         //  Вызываем метод super.tearDown() в конце
         super.tearDown()
     }
