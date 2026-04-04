@@ -22,8 +22,16 @@ final class SoundBarTests: XCTestCase {
     }
     
     //  Необходимо начинать название метода с test
-    func testExample() throws {
-        //  Тестовый тест
+    func testSetVolumeShouldBeReturned0WhenLowestVolume() {
+        //  Тело теста делится на 3 логических блока
+        
+        //  1-ый блок - Что дано?
+        sut.setVolume(to: -1)
+        //  2-ой блок - Что произошло?
+        let volume = sut.volume
+        //  3-ой блок - Что должно получится?
+        XCTAssert(volume == 0, "Lowest volume should be equal zero")
+        
     }
 
     //  Метод для проверки производительности алгоритма
