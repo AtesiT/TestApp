@@ -3,13 +3,18 @@ import XCTest
 
 final class PersonTests: XCTestCase {
     var person: Person!
+    var image: UIImage!
+    var imageData: Data!
     
     override func setUp() {
         super.setUp()
+        image = UIImage(systemName: "person.circle")
+        imageData = image?.pngData()
         person = Person(
             name: "Foo",
             surname: "Bar",
-            phone: "Baz"
+            phone: "Baz",
+            imageData: imageData
         )
     }
 
@@ -29,5 +34,7 @@ final class PersonTests: XCTestCase {
         XCTAssertEqual(person.surname, "Bar")
     }
 
-    
+    func testInitInstancePersonWithImage() {
+        XCTAssertNotNil(person.imageData)
+    }
 }
