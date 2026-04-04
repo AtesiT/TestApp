@@ -31,7 +31,11 @@ final class SoundBarTests: XCTestCase {
         let volume = sut.volume
         //  3-ой блок - Что должно получится?
         XCTAssert(volume == 0, "Lowest volume should be equal zero")
-        
+    }
+    
+    func testSetVolumeShouldBeReturned100WhenHighestVolume() {
+        sut.setVolume(to: 101)
+        XCTAssert(sut.volume == 100, "Highest volume should be equal one hundred")
     }
 
     //  Метод для проверки производительности алгоритма
